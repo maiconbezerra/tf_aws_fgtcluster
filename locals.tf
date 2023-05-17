@@ -4,7 +4,7 @@ locals {
   fortios_iam_policy = {
 
     pol-fgt-cluster = {
-      description = "Policy que permite a utilizacao do vip por ambos nodes."
+      description = "Policy to allow vip IP"
       policy = file("./iam_policy/pol-fgt-cluster.json")
       tag_product = "IAM"
     }
@@ -40,7 +40,7 @@ locals {
 
     sg_fgt_cluster = {
       description = "Fortigate Cluster config",
-      vpc_id = "vpc-0d1c68d3bc6a4cce7",
+      vpc_id = "vpc-11111111111111111",
       tag_product = "Security Group"
     }
 
@@ -93,15 +93,15 @@ locals {
 
   #  Network interfaces Config
   fortios_network_interface = {
-    #  Network Interfaces Node -> aws-saeast1a-vfw01
-    vfw01_port2 = {index = 1, private_ip = "10.210.2.50", subnet_id = "subnet-08e2d94fdc44340c4", sg = "sg_fgt_cluster", node = "aws-saeast1a-vfw01", tag_product = "Network Interface"}
-    vfw01_port3 = {index = 2, private_ip = "10.210.3.50", subnet_id = "subnet-088859cc63fecee86", sg = "sg_fgt_cluster", node = "aws-saeast1a-vfw01", tag_product = "Network Interface"}
-    vfw01_port4 = {index = 3, private_ip = "10.210.4.50", subnet_id = "subnet-075f3cd5b3a38460d", sg = "sg_fgt_cluster", node = "aws-saeast1a-vfw01", tag_product = "Network Interface"}
+    #  Network Interfaces Node 1
+    vfw01_port2 = {index = 1, private_ip = "10.210.2.50", subnet_id = "subnet-22222222222222222", sg = "sg_fgt_cluster", node = "aws-saeast1a-vfw01", tag_product = "Network Interface"}
+    vfw01_port3 = {index = 2, private_ip = "10.210.3.50", subnet_id = "subnet-33333333333333333", sg = "sg_fgt_cluster", node = "aws-saeast1a-vfw01", tag_product = "Network Interface"}
+    vfw01_port4 = {index = 3, private_ip = "10.210.4.50", subnet_id = "subnet-44444444444444444", sg = "sg_fgt_cluster", node = "aws-saeast1a-vfw01", tag_product = "Network Interface"}
 
-    #  Network Interfaces Node -> aws-saeast1b-vfw02
-    vfw02_port2 = {index = 1, private_ip = "10.210.12.50", subnet_id = "subnet-01733922939ac5e5e", sg = "sg_fgt_cluster", node = "aws-saeast1b-vfw02", tag_product = "Network Interface"}
-    vfw02_port3 = {index = 2, private_ip = "10.210.13.50", subnet_id = "subnet-025d5e9a7cb553513", sg = "sg_fgt_cluster", node = "aws-saeast1b-vfw02", tag_product = "Network Interface"}
-    vfw02_port4 = {index = 3, private_ip = "10.210.14.50", subnet_id = "subnet-0b2e53ac7a764d096", sg = "sg_fgt_cluster", node = "aws-saeast1b-vfw02", tag_product = "Network Interface"}
+    #  Network Interfaces Node 2
+    vfw02_port2 = {index = 1, private_ip = "10.210.12.50", subnet_id = "subnet-66666666666666666", sg = "sg_fgt_cluster", node = "aws-saeast1b-vfw02", tag_product = "Network Interface"}
+    vfw02_port3 = {index = 2, private_ip = "10.210.13.50", subnet_id = "subnet-77777777777777777", sg = "sg_fgt_cluster", node = "aws-saeast1b-vfw02", tag_product = "Network Interface"}
+    vfw02_port4 = {index = 3, private_ip = "10.210.14.50", subnet_id = "subnet-88888888888888888", sg = "sg_fgt_cluster", node = "aws-saeast1b-vfw02", tag_product = "Network Interface"}
   }
 
 
@@ -112,7 +112,7 @@ locals {
         ami = "ami-0ad0eb946b258b7b7",
         instance_type = "c6i.xlarge",
         az = "sa-east-1a",
-        subnet_id = "subnet-01b37227a82531b84",
+        subnet_id = "subnet-11111111111111111",
         primary_ip = "10.210.1.50",
         disable_api_termination = true,
         disable_api_stop = true,
@@ -126,7 +126,7 @@ locals {
       ami = "ami-068daf5e38aed7986",
       instance_type = "c6i.xlarge",
       az = "sa-east-1b",
-      subnet_id = "subnet-0f60606b671c3bb0e",
+      subnet_id = "subnet-55555555555555555",
       primary_ip = "10.210.11.50",
       disable_api_termination = true,
       disable_api_stop = true,

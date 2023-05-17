@@ -9,12 +9,12 @@ terraform {
 
   backend "s3" {
     #  TF remote state
-    bucket = "will-network-tf-state"
-    key = "foundation-network/firewall_cluster/will_network_environment.tfstate"
+    bucket = "bucketname"
+    key = "firewall_cluster/environment.tfstate"
     region = "sa-east-1"
 
     #  TF state lock control
-    dynamodb_table = "tf-firewall_intances"
+    dynamodb_table = "dynamodb_table_name"
     encrypt = true
 
   }
